@@ -1,13 +1,45 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto;
+  width: 50%;
+}
+
+.nav button {
+  padding: 1rem;
+  border: none;
+  font-size: large;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.loginpage, .signuppage, .dashboardpage {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginpage form, .signuppage form {
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.loginpage input, .signuppage input {
+  padding: 0.5rem;
+  width: 100%;
+}
+.errors {
+  margin-top: 1rem;
 }
