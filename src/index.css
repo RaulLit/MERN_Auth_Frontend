@@ -20,7 +20,7 @@
   border-radius: 1rem;
   cursor: pointer;
 }
-.loginpage, .signuppage, .dashboardpage {
+.loginpage, .signuppage .dashboardpage{
   width: 100%;
   height: 80vh;
   display: flex;
@@ -42,4 +42,15 @@
 }
 .errors {
   margin-top: 1rem;
+}
+.box {
+  width: 8rem;
+  height: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: grab;
 }
