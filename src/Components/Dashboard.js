@@ -4,10 +4,10 @@ import { AuthContext } from "../Context/AuthContext";
 export const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const [tasks, setTasks] = useState([
-    { id: 1, title: "complete DnD" },
-    { id: 2, title: "store order" },
-    { id: 3, title: "map tasks" },
-    { id: 4, title: "edit button" },
+    { id: 1, title: "Power" },
+    { id: 2, title: "Duration" },
+    { id: 3, title: "Vibration" },
+    { id: 4, title: "Efficiency" },
   ]);
   const [editMode, setEditMode] = useState(false);
 
@@ -23,29 +23,23 @@ export const Dashboard = () => {
   }
 
   return (
-    <div className="dashboardpage">
-      <h1>Welcome back {user}</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="text-xl font-semibold">Welcome back {user}</h1>
       <h2>This is a Dashboard</h2>
-      <button onClick={() => setEditMode(!editMode)}>{editMode ? "save" : "edit"}</button>
-      <div
-        style={{
-          width: "50vw",
-          height: "50vh",
-          border: "1px solid black",
-          display: "flex",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="w-1/2 h-96 border-2 border-gray-300 rounded flex p-2 relative">
+        <button
+          className="absolute top-1 right-1 m-1 p-2 pl-4 pr-4 bg-gray-200 hover:shadow-md rounded-full uppercase text-2xs"
+          onClick={() => setEditMode(!editMode)}
+        >
+          {editMode ? "save" : "edit"}
+        </button>
         {tasks &&
           tasks.map((task, index) => (
             <div
               key={task.id}
-              className="box"
-              style={{
-                background: `hsl(1${task.id + 3}5, 50%, 50%)`,
-                cursor: editMode ? "grab" : "default",
-                boxShadow: editMode ? "0 0 0.5rem rgba(0,0,0,0.5)" : "none",
-              }}
+              className={`box uppercase bg-lime-300 ${
+                editMode ? "cursor-grab shadow-md" : "cursor-default"
+              }`}
               draggable={editMode}
               onDragStart={() => (dragTask.current = index)}
               onDragEnter={() => (draggedOverTask.current = index)}

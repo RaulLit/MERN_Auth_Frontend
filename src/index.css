@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -20,7 +24,7 @@
   border-radius: 1rem;
   cursor: pointer;
 }
-.loginpage, .signuppage .dashboardpage{
+.loginpage, .signuppage {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -37,6 +41,7 @@
   align-items: center;
 }
 .loginpage input, .signuppage input {
+  @apply p-2 w-full border border-gray-400 rounded;
   padding: 0.5rem;
   width: 100%;
 }
